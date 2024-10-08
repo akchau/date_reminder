@@ -1,0 +1,5 @@
+pydantic==1.10.17
+python-dotenv==1.0.1
+pytz==2024.2
+schedule==1.2.2
+typing_extensions==4.12.2

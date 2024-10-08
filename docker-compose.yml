@@ -1,0 +1,16 @@
+version: '3.1'
+services:
+
+  date_reminder_mongo:
+    container_name: date_reminder_mongo
+    image: mongo:4.4
+    restart: always
+    volumes:
+      - /var/lib/mongodb/connection_controller:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${DB_USER}
+      MONGO_INITDB_ROOT_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - "${DOCKER_EXTERNAL_DB_PORT}:${DB_PORT}"
+    env_file:
+      - ".env"
